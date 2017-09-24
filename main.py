@@ -18,7 +18,10 @@ def fight():
     number_of_zombie = 1
     while health_of_zombie > 0:
         health_of_zombie = hit(health_of_zombie, agility, strength)
-        print(health_of_zombie)
+        if health_of_zombie <= 0:
+            print("Вы убили зомби")
+        else:
+            print("Вы ударили зомби, у него осталось", health_of_zombie, "здоровья")
 
 
 locations = ["Вы находитесь в пещере",
@@ -29,15 +32,15 @@ locations = ["Вы находитесь в пещере",
              "Вы находитесь в лесу"]
 
 loc = locations[random.randint(0, len(locations) - 1)]
-action=1
-while action!=0:
+action = 1
+while action != 0:
     print(loc)
-    action=int(input("Что вы хотите сделать: 0-закончить; 1-начать драку; 2-сбежать в другую локацию"))
+    action = int(input("Что вы хотите сделать: 0-закончить; 1-начать драку; 2-сбежать в другую локацию"))
     print(action)
 
-    if action==1:
+    if action == 1:
         fight()
-    elif action==2:
-        loc=locations[random.randint(0, len(locations) - 1)]
-    elif action==0:
+    elif action == 2:
+        loc = locations[random.randint(0, len(locations) - 1)]
+    elif action == 0:
         exit(0)
