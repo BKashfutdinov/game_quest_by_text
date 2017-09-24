@@ -20,5 +20,8 @@ def fight():
         health_of_zombie = hit(health_of_zombie, agility, strength)
         print(health_of_zombie)
 
+def ggg():
+    pass
+
 
 fight()
