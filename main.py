@@ -8,9 +8,9 @@ strength = 10
 
 
 def hit(health, agility, strength):
-    h = health - int(random.randint(0, 10) * (agility / 100 + 1)) - strength
+    hit_strength = int(random.randint(0, 10) * (agility / 100 + 1)) + strength - defence(agility)
     # print(h)
-    return h
+    return health - hit_strength
 
 
 def fight():
@@ -22,6 +22,11 @@ def fight():
             print("Вы убили зомби")
         else:
             print("Вы ударили зомби, у него осталось", health_of_zombie, "здоровья")
+
+
+def defence(a):
+    defence_point = a // 5
+    return defence_point
 
 
 locations = ["Вы находитесь в пещере",
