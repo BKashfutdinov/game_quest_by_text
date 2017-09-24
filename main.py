@@ -18,10 +18,12 @@ def fight():
     number_of_zombie = 1
     while health_of_zombie > 0:
 
+
         try:
             action_fight = int(input("1-ударить, 2-оборонятся, 3-попытаться убежать из боя"))
         except ValueError:
             action_fight = 3
+
 
         if action_fight == 1:
             health_of_zombie = hit(health_of_zombie, agility, strength)
